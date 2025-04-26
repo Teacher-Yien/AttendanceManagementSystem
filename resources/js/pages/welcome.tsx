@@ -18,10 +18,10 @@ export default function AttendanceLogin() {
          
       </Head>
       <div className="flex min-h-screen flex-col items-center justify-center bg-white p-6 ">
-        <div className="w-full max-w-[600px] shadow-lg p-[5rem]">
+        <div className="w-full max-w-[600px] shadow-lg p-md-[5rem] p-[2rem]">
           <div className="mb-10 text-center">
-            <h1 className="mb-1 text-2xl font-bold">ប្រព័ន្ធគ្រប់គ្រងអវត្តមានសិស្ស</h1>
-            <p className="text-gray-600">Attendance Management System</p>
+            <h1 className="mb-1 text-md-2xl text-[25px] font-bold">ប្រព័ន្ធគ្រប់គ្រងអវត្តមានសិស្ស</h1>
+            <p className="text-gray-600 text-[10px]">Attendance Management System</p>
           </div>
 
           <form onSubmit={handleSubmit}>

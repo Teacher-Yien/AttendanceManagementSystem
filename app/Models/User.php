@@ -26,7 +26,7 @@ class User extends Authenticatable
         'security_question',
         'security_answer',
         'last_login',
-        'is_active'
+        'is_active',
     ];
 
     /**
@@ -52,70 +52,36 @@ class User extends Authenticatable
         'is_active' => 'boolean',
     ];
 
-    /**
-     * Check if user is admin
-     *
-     * @return bool
-     */
     public function isAdmin()
     {
         return $this->role === 'admin';
     }
 
-    /**
-     * Check if user is professor
-     *
-     * @return bool
-     */
     public function isProfessor()
     {
         return $this->role === 'professor';
     }
 
-    /**
-     * Get the attendances created by this user (for professors)
-     */
     public function attendanceSessions()
     {
         return $this->hasMany(AttendanceSession::class, 'created_by');
     }
 
-    /**
-     * Get all classes associated with this user (for professors)
-     */
     public function classes()
     {
         return $this->belongsToMany(SchoolClass::class, 'user_classes', 'user_id', 'class_id');
     }
 
-    /**
-     * Scope a query to only include active users.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
     public function scopeActive($query)
     {
         return $query->where('is_active', true);
     }
 
-    /**
-     * Scope a query to only include users with a specific role.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string  $role
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
     public function scopeRole($query, $role)
     {
         return $query->where('role', $role);
     }
 
-    /**
-     * Update last login timestamp
-     *
-     * @return bool
-     */
     public function updateLoginTimestamp()
     {
         $this->last_login = now();

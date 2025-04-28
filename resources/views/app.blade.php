@@ -22,14 +22,9 @@
         {{-- Inline style to set the HTML background color based on our theme in app.css --}}
         <style>
             *{
-                /* font-family: "Hanuman", serif;
-                font-weight: 100;
-                font-style: normal; */
-                /* font-family: "Moul", serif;
-                font-weight: 400;
-                font-style: normal; */
-                font-family: "Koh Santepheap", serif;
-                font-weight: 100;
+                font-family: "Kantumruy Pro", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: <weight>;
                 font-style: normal;
             }
             html {
@@ -43,7 +38,7 @@
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
-        <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&family=Koh+Santepheap:wght@100;300;400;700;900&family=Moul&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
         @routes
         @viteReactRefresh
